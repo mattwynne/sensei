@@ -84,8 +84,8 @@ class Dojo
       end
 
       if success?
-        if iteration <= 5
-          commit("iteration #{iteration} tests passing.")
+        if @iteration <= 5
+          commit("iteration #{@iteration} tests passing.")
 
           puts
           puts
@@ -123,7 +123,7 @@ class Dojo
     @specs_passed = success?
   end
 
-  def next_iteration iteration
+  def next_iteration
     commit("iteration #{@iteration} refactored.")
     @iteration++
     @git.do("merge iteration-#{@iteration}")
@@ -132,6 +132,10 @@ class Dojo
   def commit message
     @git.do("add .")
     @git.do(%Q{commit -m "#{message}"})
+  end
+  
+  def flog
+    system("flog lib/*.rb")
   end
 
   def refactoring_loop
@@ -142,8 +146,12 @@ class Dojo
       puts message
 
       go_next = (STDIN.gets == " \n")
-      system("rake")
-      go_next = go_next and success?
+      system("rake spec features")
+      all_green = success?
+      if all_green
+        flog
+      end
+      go_next = go_next and all_green
     end
   end
 end

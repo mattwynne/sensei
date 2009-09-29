@@ -1,6 +1,6 @@
 first steps
-* create separate repo for minesweeper kata, with iteration commits
-* 
+* DONE create separate repo for minesweeper kata, with iteration commits
+* move flog from minesweeper to sensei
 
 other things to tidy up
 * how many iterations? - can we query the git repo for tag names?
