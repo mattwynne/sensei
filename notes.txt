@@ -1,0 +1,17 @@
+first steps
+* create separate repo for minesweeper kata, with iteration commits
+* 
+
+other things to tidy up
+* how many iterations? - can we query the git repo for tag names?
+
+infrastructure for cukes/specs?
+
+gem management
+* gem install sensei
+* sensei init minesweeper
+* cd minesweeper
+* sensei run
+
+* there is a repository of known kata
+* sensei init 'kata-name' clones the git repo with iterations 
