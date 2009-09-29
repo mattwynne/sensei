@@ -1,9 +1,10 @@
 first steps
 * DONE create separate repo for minesweeper kata, with iteration commits
-* move flog from minesweeper to sensei
-
-other things to tidy up
-* how many iterations? - can we query the git repo for tag names?
+* DONE move flog from minesweeper to sensei
+* TODO fix refactoring loop to reuse flog
+* TODO should flog always look in ./lib?
+* TODO can we detect how many iterations there are?
+* TODO add a reset method
 
 infrastructure for cukes/specs?
 
@@ -14,4 +15,6 @@ gem management
 * sensei run
 
 * there is a repository of known kata
-* sensei init 'kata-name' clones the git repo with iterations 
+* sensei init 'kata-name' clones the git repo with iterations
+
+* add a reset method 

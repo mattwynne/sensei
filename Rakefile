@@ -84,7 +84,7 @@ class Dojo
       end
 
       if success?
-        if @iteration <= 5
+        if @iteration < 5
           commit("iteration #{@iteration} tests passing.")
 
           puts
@@ -125,7 +125,7 @@ class Dojo
 
   def next_iteration
     commit("iteration #{@iteration} refactored.")
-    @iteration++
+    @iteration = @iteration+1
     @git.do("merge iteration-#{@iteration}")
   end
 
