@@ -1,7 +1,7 @@
 first steps
 * DONE create separate repo for minesweeper kata, with iteration commits
 * DONE move flog from minesweeper to sensei
-* TODO fix end game loop to reuse flog
+* DONE fix end game loop to reuse flog
 * TODO should flog always look in ./lib?
 * TODO can we detect how many iterations there are?
 * TODO add a reset method
