@@ -97,8 +97,9 @@ class Dojo
         else
           puts "EPIC WIN! Now to play the refactoring game..."
           until false
-            system("rake")
+            system("rake spec features")
             if success?
+              flog
               commit "refactoring"
             end
             puts "Not bad. Can you do any better? (Hit a key to re-run the flog)"
@@ -146,12 +147,14 @@ class Dojo
       puts message
 
       go_next = (STDIN.gets == " \n")
-      system("rake spec features")
-      all_green = success?
-      if all_green
-        flog
+      
+      unless go_next && success?
+        system("rake spec features")
+        if success?
+          flog
+        end
+        go_next = false
       end
-      go_next = go_next and all_green
     end
   end
 end
