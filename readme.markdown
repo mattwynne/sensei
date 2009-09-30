@@ -35,3 +35,15 @@ Your project must respond to the commands `rake spec` and `cucumber features`, i
 # Credits
 
 The original idea came from [Matt Wynne](http://blog.mattwynne.net/)'s session at the [September 2009 London Ruby Users Group](http://lrug.org/meetings/2009/09/18/october-2009-meeting/). I've added the rspec part of the workflow and I'm working on the packaging. The features for the minesweeper kata are his.
+
+# Future plans
+
+* Package as a gem
+* Provide online repository of known katas
+
+Ultimately the user should be able to do something like:
+
+    gem install sensei
+    sensei init minesweeper (downloads dojo code for minesweeper)
+    cd minesweeper
+    sensei start
